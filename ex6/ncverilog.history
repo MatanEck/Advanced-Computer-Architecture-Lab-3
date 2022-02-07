@@ -1,0 +1,2 @@
+s1(13Nov2021:14:43:37):  ncverilog +access+rw parity_tb.v parity.v 
+s2(13Nov2021:17:27:15):  ncverilog +access+rw parity_tb.v parity.v 
