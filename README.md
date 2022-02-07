@@ -3,8 +3,8 @@ Lab #3: Verilog introduction
 
 In this lab we'll learn to use Verilog simulation tools using simple examples. 
 
-1. Mux:
-=====================
+1. Mux
+
 The file mux.v contains two implementations of a 2:1 mux: the first using continuous assignment syntax, and the second
 using an always block. Both have the following inputs/output:
 module mux1(a,b,select,result);
@@ -15,8 +15,8 @@ module mux1(a,b,select,result);
 If select is '1', b is selected, otherwise a is selected.
 Complete the code, and test it using the provided mux_tb.v testbench.
 
-2. Half adder:
-=====================
+2. Half adder
+
 Design a 1-bit half adder using structural gate level Verilog. The adder accepts two binary inputs: a and b, and computes
 their output sum and carry:
 module halfadder(a,b,sum,carry);
@@ -27,7 +27,7 @@ code, verify that it's working well using the testbench. In addition to the log,
 operation.
 
 3. Full adder
-=====================
+
 Design a 1-bit full adder taking three 1-bit inputs: a, b, and ci, and giving sum and co.
 module fulladder( sum, co, a, b, ci);
  input a, b, ci;
@@ -35,7 +35,7 @@ module fulladder( sum, co, a, b, ci);
 Write a testbench and use it to simulate the adder, checking all input combinations.
 
 4. Four bit unsigned adder
-=====================
+
 Design a 4-bit unsigned adder using instantiation of four 1-bit adders.
 module add4( sum, co, a, b, ci);
  input [3:0] a, b;
@@ -45,7 +45,7 @@ module add4( sum, co, a, b, ci);
 No need to write a testbench, since it will be tested as part of the next exercise. 
 
 5. Four bit add/sub unit
-=====================
+
 Use the 4-bit unsigned adder from the previous exercise to design a 4-bit signed add/sub unit, which can either add or sub
 based on a mode input (0 add, 1 sub).
 module addsub( result, operand_a, operand_b, mode );
@@ -55,7 +55,7 @@ module addsub( result, operand_a, operand_b, mode );
  Test it with the provided testbench, and submit a wave screenshot of the simulation.
 
 6. Parity
-=====================
+
 Design a state machine which will accept a stream of bits (one every clock), and will output '1' if the number of ones
 accepted so far is even, or '0' otherwise.
 module iseven(clk, in, reset, out);
@@ -64,7 +64,7 @@ module iseven(clk, in, reset, out);
 Fill in the provided parity.v and parity_tb.v and submit them along with the Verilog log file.
 
 7. Bi-Modal N-bit Saturating Counter
-=====================
+
 Design an N-bit saturating counter circuit, which is widely used for branch prediction. The circuit maintains an N-bit
 counter, initialized to 0 at reset=1. The counter value is preserved when reset=0 and branch=0, whereas it is updated when
 reset=0 and branch=1 according to the following rule:
@@ -79,7 +79,7 @@ Submit a state diagram of sat_count(N=2). Fill the sat_count.v code, and write a
 must perform a test of sat_count(N=2) and print a final answer such as "PASSED ALL TESTS". 
 
 8. fifo(N,W)
-=====================
+
 Design a first-in-first-out queue synchronous module which satisfies the specifications below:
 module fifo(clk, reset, in, push, pop, out, full);
  parameter N=4; // determines the maximum number of words in queue.
